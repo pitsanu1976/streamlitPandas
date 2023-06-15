@@ -1,13 +1,13 @@
-from dotenv import load_dotenv
-import os
 import streamlit as st
 import pandas as pd
 from pandasai import PandasAI
 from pandasai.llm.openai import OpenAI
 
-load_dotenv()
 
-API_KEY = os.environ['openai_api_key']
+headers = {
+    "authorization": st.secrets["openai_api_key"],
+    "content-type": "application/json"
+}
 
 llm = OpenAI(api_token=API_KEY)
 pandas_ai = PandasAI(llm)
