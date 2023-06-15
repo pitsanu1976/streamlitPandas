@@ -8,7 +8,7 @@ headers = {
     "authorization": st.secrets["openai_api_key"],
     "content-type": "application/json"
 }
-
+API_KEY = st.secrets["openai_api_key"]
 llm = OpenAI(api_token=API_KEY)
 pandas_ai = PandasAI(llm)
 
